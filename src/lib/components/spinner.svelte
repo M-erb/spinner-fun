@@ -21,7 +21,7 @@
     itemLabelRadiusMax: .25,
     itemLabelRadius: .75,
     rotationSpeedMax: 500,
-    pointerAngle: 180,
+    pointerAngle: 0,
     radius: 1,
     items,
     onRest(event: { currentIndex: number, rotation: number, type: string }) {
@@ -38,7 +38,7 @@
 
     // @ts-ignore
     if (wheel) {
-      wheel.pointerAngle = 180
+      wheel.pointerAngle = 0
       direction ? wheel.spin(rando) : wheel.spin(-1 * rando)
     }
 
@@ -133,7 +133,7 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: -9px;
+        top: -9px;
         left: 50%;
         transform: translateX(-50%) rotate(45deg);
 
@@ -143,7 +143,7 @@
         height: 14px;
 
         @media (--md) {
-          bottom: -11px;
+          bottom: -16px;
           border-width: 8px;
           width: 20px;
           height: 20px;
@@ -151,6 +151,7 @@
       }
     }
   }
+
   .selected_box {
     margin-top: var(--size-4);
     text-align: center;
